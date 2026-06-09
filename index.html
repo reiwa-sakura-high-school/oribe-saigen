@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Welcome</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Zen Maru Gothic',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        -45deg,
+        #4285f4,
+        #7b61ff,
+        #00d4ff,
+        #34a853,
+        #ea4335
+    );
+    background-size:400% 400%;
+    animation:bgMove 18s ease infinite;
+    position:relative;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* オーブ */
+.orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(50px);
+    opacity:.6;
+    animation:float 12s ease-in-out infinite;
+}
+
+.orb1{
+    width:400px;
+    height:400px;
+    background:#ffffff;
+    top:-100px;
+    left:-100px;
+}
+
+.orb2{
+    width:500px;
+    height:500px;
+    background:#00ffff;
+    bottom:-150px;
+    right:-150px;
+    animation-delay:2s;
+}
+
+.orb3{
+    width:250px;
+    height:250px;
+    background:#ffb6ff;
+    top:50%;
+    left:70%;
+    animation-delay:5s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px) translateX(0px);
+    }
+    50%{
+        transform:translateY(-40px) translateX(20px);
+    }
+}
+
+.card{
+    width:min(900px,90%);
+    padding:60px;
+    text-align:center;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:35px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.15),
+    inset 0 0 20px rgba(255,255,255,.15);
+
+    position:relative;
+    z-index:5;
+}
+
+.logo{
+    font-size:5rem;
+    font-weight:900;
+    color:white;
+    text-shadow:
+    0 0 20px rgba(255,255,255,.5);
+    letter-spacing:.08em;
+}
+
+.title{
+    margin-top:20px;
+    font-size:2.8rem;
+    font-weight:700;
+    color:white;
+    line-height:1.4;
+}
+
+.subtitle{
+    margin-top:25px;
+    font-size:1.15rem;
+    color:rgba(255,255,255,.9);
+    line-height:1.9;
+}
+
+.btns{
+    margin-top:45px;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:18px 38px;
+    border-radius:999px;
+    font-size:1rem;
+    font-weight:700;
+    transition:.35s;
+}
+
+.primary{
+    background:white;
+    color:#4285f4;
+}
+
+.primary:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 15px 35px rgba(255,255,255,.3);
+}
+
+.secondary{
+    border:2px solid rgba(255,255,255,.5);
+    color:white;
+}
+
+.secondary:hover{
+    background:rgba(255,255,255,.15);
+    transform:translateY(-5px);
+}
+
+.glow{
+    position:absolute;
+    inset:-2px;
+    border-radius:35px;
+    background:linear-gradient(
+        45deg,
+        rgba(255,255,255,.3),
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.3)
+    );
+    z-index:-1;
+    filter:blur(20px);
+}
+
+.footer{
+    margin-top:40px;
+    color:rgba(255,255,255,.7);
+    font-size:.95rem;
+}
+
+@media(max-width:768px){
+
+    .card{
+        padding:40px 25px;
+    }
+
+    .logo{
+        font-size:3rem;
+    }
+
+    .title{
+        font-size:2rem;
+    }
+
+    .subtitle{
+        font-size:1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<div class="card">
+
+    <div class="glow"></div>
+
+    <div class="logo">WELCOME</div>
+
+    <h1 class="title">
+        ようこそ、新しい体験へ。
+    </h1>
+
+    <p class="subtitle">
+        柔らかな光と流れる色彩が織りなす、
+        まるで吸い込まれるようなウェルカムページ。<br>
+        Zen Maru Gothic の優しい世界観で、
+        訪れる人を心地よく迎えます。
+    </p>
+
+    <div class="btns">
+        <a href="#" class="btn primary">はじめる</a>
+        <a href="#" class="btn secondary">もっと見る</a>
+    </div>
+
+    <div class="footer">
+        Designed with Zen Maru Gothic
+    </div>
+
+</div>
+
+</body>
+</html>
+
